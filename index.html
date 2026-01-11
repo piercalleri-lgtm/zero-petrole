@@ -291,6 +291,12 @@
 <body>
     <div class="glow"></div>
 
+    <!-- FORMULAIRE CACHÉ POUR NETLIFY (Indispensable pour la détection) -->
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+        <input type="email" name="email" />
+        <textarea name="message"></textarea>
+    </form>
+
     <div class="container">
         <nav>
             <div class="logo" onclick="showPage('home')">Zéro<span>Pétrole</span></div>
@@ -389,6 +395,7 @@
             <div class="content-card">
                 <a onclick="showPage('home')" class="back-btn">← Retour à l'accueil</a>
                 <h2>Contactez-nous</h2>
+                <!-- Formulaire configuré pour Netlify Forms -->
                 <form id="contact-form" name="contact" method="POST" data-netlify="true">
                     <input type="hidden" name="form-name" value="contact" />
                     <div class="form-group">
@@ -487,7 +494,11 @@
                     successMsg.style.display = "block";
                     btn.textContent = "Message envoyé !";
                 } catch (error) {
-                    alert("Erreur lors de l'envoi. Veuillez réessayer.");
+                    const errorBox = document.createElement('div');
+                    errorBox.style.color = '#ef4444';
+                    errorBox.style.marginTop = '10px';
+                    errorBox.textContent = "Une erreur est survenue. Veuillez réessayer.";
+                    contactForm.appendChild(errorBox);
                     btn.disabled = false;
                     btn.textContent = "Envoyer le message";
                 }
