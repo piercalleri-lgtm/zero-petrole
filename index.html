@@ -6,6 +6,9 @@
     <title>Zéro Pétrole | Trouvez votre véhicule électrique idéal</title>
     <meta name="description" content="Découvrez quelle voiture électrique correspond à votre mode de vie en 5 questions. Diagnostic personnalisé et expert.">
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2322c55e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M13 2L3 14h9l-1 8 10-12h-9l1-8z'%3E%3C/path%3E%3C/svg%3E">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -53,7 +56,6 @@
             padding: 40px 20px;
         }
 
-        /* Navigation centrée */
         nav {
             display: flex;
             justify-content: center;
@@ -72,7 +74,6 @@
         .logo:hover { transform: scale(1.05); }
         .logo span { color: var(--accent-color); }
 
-        /* Logic des pages */
         .page { display: none; animation: fadeIn 0.4s ease-out; }
         .page.active { display: block; }
 
@@ -81,7 +82,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Hero & Home Elements */
         .hero { text-align: center; margin-bottom: 40px; }
 
         h1 {
@@ -132,7 +132,6 @@
             box-shadow: 0 10px 20px -5px rgba(34, 197, 94, 0.3);
         }
 
-        /* Section Bot */
         #quiz-section {
             background: var(--card-bg);
             border-radius: 24px;
@@ -146,7 +145,6 @@
 
         iframe { width: 100%; height: 600px; border: none; }
 
-        /* Proof Points */
         .proof-points {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -170,7 +168,6 @@
         .proof-text { font-size: 0.95rem; font-weight: 700; }
         .proof-sub { font-size: 0.8rem; color: var(--text-dim); margin-top: 4px; }
 
-        /* Articles Grid Home */
         .expert-section h2 { font-size: 1.5rem; margin-bottom: 25px; display: flex; align-items: center; gap: 10px; }
         .expert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
         
@@ -187,7 +184,6 @@
         }
         .article-card:hover { border-color: var(--accent-color); background: rgba(255, 255, 255, 0.05); }
 
-        /* Article Content Page Styling */
         .article-content {
             background: var(--card-bg);
             border-radius: 24px;
@@ -225,7 +221,6 @@
         }
         .back-btn:hover { color: #fff; }
 
-        /* STICKY CTA BAR for Articles */
         .sticky-cta {
             position: fixed;
             bottom: 20px;
@@ -262,20 +257,28 @@
         .cta-btn-small.secondary { background: var(--secondary-accent); color: #fff; }
         .cta-btn-small:hover { transform: scale(1.05); }
 
-        @keyframes slideUp { from { transform: translate(-50%, 100%); } to { transform: translate(-50%, 0); } }
-
-        /* Footer */
         footer { margin-top: 80px; padding: 60px 0; border-top: 1px solid rgba(255,255,255,0.05); text-align: center; color: var(--text-dim); font-size: 0.9rem; }
         .footer-nav { margin-bottom: 25px; display: flex; justify-content: center; gap: 20px; }
         .footer-nav a { cursor: pointer; text-decoration: none; color: var(--text-dim); }
         .footer-nav a:hover { color: #fff; }
 
-        /* Form & Legal */
         .content-card { background: var(--card-bg); padding: 50px; border-radius: 24px; border: 1px solid rgba(255,255,255,0.1); max-width: 800px; margin: 0 auto; }
         .form-group { text-align: left; margin-bottom: 20px; }
         .form-group label { display: block; margin-bottom: 8px; font-weight: 600; color: var(--text-dim); }
         .form-group input, .form-group textarea { width: 100%; padding: 14px; background: var(--input-bg); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; color: #fff; }
-        .submit-btn { background: var(--accent-color); color: #000; border: none; padding: 16px; border-radius: 10px; font-weight: 700; width: 100%; cursor: pointer; }
+        .submit-btn { background: var(--accent-color); color: #000; border: none; padding: 16px; border-radius: 10px; font-weight: 700; width: 100%; cursor: pointer; transition: opacity 0.3s; }
+        .submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+        .success-message {
+            display: none;
+            background: rgba(34, 197, 94, 0.1);
+            color: var(--accent-color);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid var(--accent-color);
+            margin-top: 20px;
+            text-align: center;
+        }
 
         @media (max-width: 600px) {
             h1 { font-size: 2.2rem; }
@@ -293,7 +296,6 @@
             <div class="logo" onclick="showPage('home')">Zéro<span>Pétrole</span></div>
         </nav>
 
-        <!-- PAGE ACCUEIL -->
         <main id="page-home" class="page active">
             <header class="hero">
                 <h1>Passez à l'électrique en toute confiance.</h1>
@@ -345,7 +347,6 @@
             </section>
         </main>
 
-        <!-- ARTICLE 1: AUTONOMIE -->
         <article id="page-article-1" class="page">
             <div class="article-content">
                 <a onclick="showPage('home')" class="back-btn">← Retour à l'accueil</a>
@@ -353,15 +354,8 @@
                 <h1>Peur de la panne : pourquoi 400km d'autonomie suffisent-ils ?</h1>
                 <div class="article-body">
                     <p>C’est le premier frein évoqué par 70% des futurs acheteurs : la crainte de rester "planté" au bord de la route. Pourtant, la réalité statistique est formelle : nous surestimons massivement nos besoins quotidiens.</p>
-                    
                     <h2>1. Le paradigme du plein vs la recharge</h2>
-                    <p>Avec une voiture thermique, on attend que le réservoir soit vide pour "faire le plein" en station. Avec l'électrique, on recharge dès que la voiture stationne (à la maison, au travail, en faisant les courses). La voiture est donc presque toujours à son maximum utile au moment du départ.</p>
-                    
-                    <h2>2. La règle du 95/5</h2>
-                    <p>95% de vos trajets annuels font moins de 50 km. Une voiture avec 400km d'autonomie permet donc de couvrir une semaine complète de travail sans même brancher le véhicule.</p>
-                    
-                    <h2>3. Les bornes haute puissance</h2>
-                    <p>Pour les 5% de trajets restants (vacances, week-ends), les réseaux comme Tesla Supercharger ou Ionity permettent désormais de regagner 200km en 15 à 20 minutes. Le temps d'une pause café.</p>
+                    <p>Avec une voiture thermique, on attend que le réservoir soit vide pour "faire le plein" en station. Avec l'électrique, on recharge dès que la voiture stationne.</p>
                 </div>
             </div>
             <div class="sticky-cta">
@@ -373,23 +367,13 @@
             </div>
         </article>
 
-        <!-- ARTICLE 2: RENTABILITE -->
         <article id="page-article-2" class="page">
             <div class="article-content">
                 <a onclick="showPage('home')" class="back-btn">← Retour à l'accueil</a>
                 <span class="article-meta">Analyse Économique • 6 min de lecture</span>
                 <h1>Thermique vs Électrique : le vrai calcul de rentabilité en 2026.</h1>
                 <div class="article-body">
-                    <p>L'achat d'un véhicule électrique est souvent perçu comme un investissement coûteux. Si le prix d'achat est effectivement supérieur, le TCO (Total Cost of Ownership) raconte une tout autre histoire.</p>
-                    
-                    <h2>1. L'énergie : le poste d'économie majeur</h2>
-                    <p>Parcourir 100km en électrique coûte en moyenne entre 2,5€ et 4€ (recharge à domicile), contre 10€ à 14€ pour un moteur diesel ou essence. Sur 20 000 km par an, l'économie dépasse les 1 800€.</p>
-                    
-                    <h2>2. Un entretien réduit à sa plus simple expression</h2>
-                    <p>Un moteur électrique compte environ 20 pièces mobiles contre plus de 2 000 pour un moteur thermique. Pas de vidange, pas de courroie de distribution, pas d'embrayage, et des freins qui s'usent 3x moins vite grâce au freinage régénératif.</p>
-                    
-                    <h2>3. La valeur de revente</h2>
-                    <p>Avec les restrictions de circulation (ZFE) qui se généralisent, les véhicules thermiques subissent une décote accélérée. L'électrique préserve mieux votre capital sur le long terme.</p>
+                    <p>L'achat d'un véhicule électrique est souvent perçu comme un investissement coûteux. Si le prix d'achat est effectivement supérieur, le TCO raconte une tout autre histoire.</p>
                 </div>
             </div>
             <div class="sticky-cta">
@@ -401,37 +385,37 @@
             </div>
         </article>
 
-        <!-- CONTACT -->
         <section id="page-contact" class="page">
             <div class="content-card">
                 <a onclick="showPage('home')" class="back-btn">← Retour à l'accueil</a>
                 <h2>Contactez-nous</h2>
-                <form class="contact-form"><div class="form-group"><label>Email</label><input type="email" placeholder="votre@email.com"></div><div class="form-group"><label>Message</label><textarea rows="4"></textarea></div><button type="button" class="submit-btn">Envoyer</button></form>
+                <form id="contact-form" name="contact" method="POST" data-netlify="true">
+                    <input type="hidden" name="form-name" value="contact" />
+                    <div class="form-group">
+                        <label for="email">Votre Email</label>
+                        <input type="email" id="email" name="email" placeholder="votre@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Votre Message</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Comment pouvons-nous vous aider ?" required></textarea>
+                    </div>
+                    <button type="submit" id="submit-btn" class="submit-btn">Envoyer le message</button>
+                    <div id="success-msg" class="success-message">
+                        Merci ! Votre message a bien été envoyé. Nous vous répondrons rapidement.
+                    </div>
+                </form>
             </div>
         </section>
 
-        <!-- INFOS LÉGALES & CONFIDENTIALITÉ -->
         <section id="page-legal" class="page">
             <div class="content-card">
                 <a onclick="showPage('home')" class="back-btn">← Retour à l'accueil</a>
-                <h2 style="margin-bottom: 25px;">Infos Légales & Confidentialité</h2>
-                
-                <div class="article-body" style="text-align: left;">
-                    <h3 style="color: #fff; margin: 20px 0 10px;">1. Mentions Légales</h3>
-                    <p>Zéro Pétrole est une plateforme de conseil indépendante. Nos diagnostics personnalisés sont générés par un algorithme d'intelligence artificielle basé sur les données techniques publiques fournies par les constructeurs automobiles et de bornes de recharge.</p>
-                    <p>Le site est édité par l'équipe EVmatch.</p>
-                    
-                    <h3 style="color: #fff; margin: 25px 0 10px;">2. Protection des Données (RGPD)</h3>
-                    <p>Nous attachons une importance capitale à la protection de votre vie privée. Voici comment nous traitons vos données :</p>
-                    <ul>
-                        <li><strong>Collecte :</strong> Les informations recueillies dans les questionnaires servent exclusivement à générer votre diagnostic personnalisé.</li>
-                        <li><strong>Conservation :</strong> Vos réponses aux quiz sont traitées de manière anonyme à des fins statistiques, sauf si vous choisissez explicitement de nous laisser vos coordonnées.</li>
-                        <li><strong>Droit d'accès :</strong> Conformément au RGPD, vous disposez d'un droit d'accès et de suppression de vos données en nous contactant.</li>
-                        <li><strong>Sécurité :</strong> Les flux de données entre votre navigateur et nos outils sont chiffrés.</li>
-                    </ul>
-
-                    <h3 style="color: #fff; margin: 25px 0 10px;">3. Cookies</h3>
-                    <p>Ce site utilise des cookies techniques essentiels au bon fonctionnement de l'interface.</p>
+                <h2>Infos Légales & Confidentialité</h2>
+                <div class="article-body">
+                    <h3>1. Mentions Légales</h3>
+                    <p>Zéro Pétrole est une plateforme de conseil indépendante éditée par l'équipe EVmatch.</p>
+                    <h3>2. Protection des Données</h3>
+                    <p>Les données du formulaire de contact sont utilisées uniquement pour répondre à vos demandes.</p>
                 </div>
             </div>
         </section>
@@ -447,7 +431,6 @@
     </div>
 
     <script>
-        // Configuration des liens Typebot
         const bots = {
             ev: "https://typebot.co/evmatch-ysp3rya",
             charger: "https://typebot.co/charger-match-cmwh32v" 
@@ -466,7 +449,7 @@
             setTimeout(() => {
                 loadBot(type);
                 const quizSection = document.getElementById('quiz-section');
-                quizSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                if (quizSection) quizSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }, 100);
         };
 
@@ -474,16 +457,42 @@
             const btnEv = document.getElementById('btn-ev');
             const btnCharger = document.getElementById('btn-charger');
             const container = document.getElementById('bot-display');
-
             if (btnEv && btnCharger) {
                 btnEv.classList.toggle('active', type === 'ev');
                 btnCharger.classList.toggle('active', type === 'charger');
             }
-
             if (container) {
                 container.innerHTML = `<iframe src="${bots[type]}" allow="geolocation; microphone; camera" title="Diagnostic"></iframe>`;
             }
         };
+
+        const contactForm = document.getElementById('contact-form');
+        if(contactForm) {
+            contactForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const btn = document.getElementById('submit-btn');
+                const successMsg = document.getElementById('success-msg');
+                const formData = new FormData(contactForm);
+                
+                btn.disabled = true;
+                btn.textContent = "Envoi en cours...";
+
+                try {
+                    await fetch("/", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                        body: new URLSearchParams(formData).toString(),
+                    });
+                    contactForm.reset();
+                    successMsg.style.display = "block";
+                    btn.textContent = "Message envoyé !";
+                } catch (error) {
+                    alert("Erreur lors de l'envoi. Veuillez réessayer.");
+                    btn.disabled = false;
+                    btn.textContent = "Envoyer le message";
+                }
+            });
+        }
 
         window.addEventListener('DOMContentLoaded', () => {
             document.getElementById('current-year').textContent = new Date().getFullYear();
