@@ -321,18 +321,18 @@
             <div class="proof-points">
                 <div class="proof-item">
                     <svg class="proof-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7h-9m3 3H8m5 3H6m13-9a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l3 4Z"></path></svg>
-                    <span class="proof-text">Analyse Sur-Mesure</span>
-                    <span class="proof-sub">Basé sur vos habitudes</span>
+                    <span class="proof-text">Indépendance Totale</span>
+                    <span class="proof-sub">Zéro commission constructeur</span>
                 </div>
                 <div class="proof-item">
                     <svg class="proof-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
                     <span class="proof-text">Algorithme Expert</span>
-                    <span class="proof-sub">+100 modèles comparés</span>
+                    <span class="proof-sub">Analyse basé sur vos critères réels</span>
                 </div>
                 <div class="proof-item">
                     <svg class="proof-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                    <span class="proof-text">Conseil Neutre</span>
-                    <span class="proof-sub">Indépendant des marques</span>
+                    <span class="proof-text">Économies Garanties</span>
+                    <span class="proof-sub">Optimisation de votre budget</span>
                 </div>
             </div>
 
@@ -355,8 +355,78 @@
             </section>
         </main>
 
-        <!-- Pages Articles, Contact et Légales inchangées -->
-        <!-- ... -->
+        <article id="page-article-1" class="page">
+            <div class="article-content">
+                <a onclick="showPage('home')" class="back-btn">← Retour à l'accueil</a>
+                <span class="article-meta">Dossier Spécial Autonomie • 5 min de lecture</span>
+                <h1>Peur de la panne : pourquoi 400km d'autonomie suffisent-ils ?</h1>
+                <div class="article-body">
+                    <p>C’est le premier frein évoqué par 70% des futurs acheteurs : la crainte de rester "planté" au bord de la route. Pourtant, la réalité statistique est formelle : nous surestimons massivement nos besoins quotidiens.</p>
+                    <h2>1. Le paradigme du plein vs la recharge</h2>
+                    <p>Avec une voiture thermique, on attend que le réservoir soit vide pour "faire le plein" en station. Avec l'électrique, on recharge dès que la voiture stationne.</p>
+                </div>
+            </div>
+            <div class="sticky-cta">
+                <div class="cta-text">Prêt à tester l'électrique ?</div>
+                <div class="cta-btns">
+                    <button class="cta-btn-small primary" onclick="goToQuiz('ev')">Trouver ma voiture</button>
+                    <button class="cta-btn-small secondary" onclick="goToQuiz('charger')">Trouver ma borne</button>
+                </div>
+            </div>
+        </article>
+
+        <article id="page-article-2" class="page">
+            <div class="article-content">
+                <a onclick="showPage('home')" class="back-btn">← Retour à l'accueil</a>
+                <span class="article-meta">Analyse Économique • 6 min de lecture</span>
+                <h1>Thermique vs Électrique : le vrai calcul de rentabilité en 2026.</h1>
+                <div class="article-body">
+                    <p>L'achat d'un véhicule électrique est souvent perçu comme un investissement coûteux. Si le prix d'achat est effectivement supérieur, le TCO raconte une tout autre histoire.</p>
+                </div>
+            </div>
+            <div class="sticky-cta">
+                <div class="cta-text">Calculez vos économies réelles</div>
+                <div class="cta-btns">
+                    <button class="cta-btn-small primary" onclick="goToQuiz('ev')">Trouver ma voiture</button>
+                    <button class="cta-btn-small secondary" onclick="goToQuiz('charger')">Trouver ma borne</button>
+                </div>
+            </div>
+        </article>
+
+        <section id="page-contact" class="page">
+            <div class="content-card">
+                <a onclick="showPage('home')" class="back-btn">← Retour à l'accueil</a>
+                <h2>Contactez-nous</h2>
+                <form id="contact-form" name="contact" method="POST" data-netlify="true">
+                    <input type="hidden" name="form-name" value="contact" />
+                    <div class="form-group">
+                        <label for="email">Votre Email</label>
+                        <input type="email" id="email" name="email" placeholder="votre@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Votre Message</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Comment pouvons-nous vous aider ?" required></textarea>
+                    </div>
+                    <button type="submit" id="submit-btn" class="submit-btn">Envoyer le message</button>
+                    <div id="success-msg" class="success-message">
+                        Merci ! Votre message a bien été envoyé. Nous vous répondrons rapidement.
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section id="page-legal" class="page">
+            <div class="content-card">
+                <a onclick="showPage('home')" class="back-btn">← Retour à l'accueil</a>
+                <h2>Infos Légales & Confidentialité</h2>
+                <div class="article-body">
+                    <h3>1. Mentions Légales</h3>
+                    <p>Zéro Pétrole est une plateforme de conseil indépendante éditée par l'équipe EVmatch.</p>
+                    <h3>2. Protection des Données</h3>
+                    <p>Les données du formulaire de contact sont utilisées uniquement pour répondre à vos demandes.</p>
+                </div>
+            </div>
+        </section>
 
         <footer>
             <div class="footer-nav">
@@ -369,44 +439,10 @@
     </div>
 
     <script>
-        // Scripts de navigation, bots et cookies inchangés
         const bots = {
             ev: "https://typebot.co/evmatch-ysp3rya",
             charger: "https://typebot.co/charger-match-cmwh32v" 
         };
-
-        const COOKIE_NAME = 'zeropetrole_consent';
-        
-        function checkConsent() {
-            const consent = localStorage.getItem(COOKIE_NAME);
-            if (consent === null) {
-                document.getElementById('cookie-banner').style.display = 'flex';
-            } else if (consent === 'true') {
-                enableScripts();
-            }
-        }
-
-        window.consentResponse = function(isAccepted) {
-            localStorage.setItem(COOKIE_NAME, isAccepted);
-            document.getElementById('cookie-banner').style.display = 'none';
-            if (isAccepted) {
-                enableScripts();
-            }
-        };
-
-        function enableScripts() {
-            const scripts = document.querySelectorAll('script[type="text/plain"][data-cookiecategory="analytics"]');
-            scripts.forEach(oldScript => {
-                const newScript = document.createElement('script');
-                Array.from(oldScript.attributes).forEach(attr => {
-                    if (attr.name !== 'type') {
-                        newScript.setAttribute(attr.name, attr.value);
-                    }
-                });
-                newScript.innerHTML = oldScript.innerHTML;
-                oldScript.parentNode.replaceChild(newScript, oldScript);
-            });
-        }
 
         window.showPage = function(pageId) {
             document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
@@ -414,6 +450,15 @@
             if (target) target.classList.add('active');
             window.scrollTo({ top: 0, behavior: 'smooth' });
             if (pageId === 'home') loadBot('ev');
+        };
+
+        window.goToQuiz = function(type) {
+            showPage('home');
+            setTimeout(() => {
+                loadBot(type);
+                const quizSection = document.getElementById('quiz-section');
+                if (quizSection) quizSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 100);
         };
 
         window.loadBot = function(type) {
@@ -429,10 +474,41 @@
             }
         };
 
+        const contactForm = document.getElementById('contact-form');
+        if(contactForm) {
+            contactForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const btn = document.getElementById('submit-btn');
+                const successMsg = document.getElementById('success-msg');
+                const formData = new FormData(contactForm);
+                
+                btn.disabled = true;
+                btn.textContent = "Envoi en cours...";
+
+                try {
+                    await fetch("/", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                        body: new URLSearchParams(formData).toString(),
+                    });
+                    contactForm.reset();
+                    successMsg.style.display = "block";
+                    btn.textContent = "Message envoyé !";
+                } catch (error) {
+                    const errorBox = document.createElement('div');
+                    errorBox.style.color = '#ef4444';
+                    errorBox.style.marginTop = '10px';
+                    errorBox.textContent = "Une erreur est survenue. Veuillez réessayer.";
+                    contactForm.appendChild(errorBox);
+                    btn.disabled = false;
+                    btn.textContent = "Envoyer le message";
+                }
+            });
+        }
+
         window.addEventListener('DOMContentLoaded', () => {
             document.getElementById('current-year').textContent = new Date().getFullYear();
             loadBot('ev');
-            checkConsent();
         });
     </script>
 </body>
